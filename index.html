@@ -5,9 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>THE FINAL SHOWDOWN — RoboDarshan, IIEST Shibpur</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -21,7 +19,7 @@
     <div class="nav-links">
       <a href="#events">Events</a>
       <a href="#schedule">Schedule</a>
-      <a href="#register">Register</a>
+      <a href="#team">Team</a>
     </div>
     <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileNav()" aria-label="Toggle navigation">
       <span></span><span></span><span></span>
@@ -32,13 +30,12 @@
   <div class="mobile-nav" id="mobileNav">
     <a href="#events" onclick="closeMobileNav()">Events</a>
     <a href="#schedule" onclick="closeMobileNav()">Schedule</a>
-    <a href="#register" onclick="closeMobileNav()">Register</a>
+    <a href="#team" onclick="closeMobileNav()">Team</a>
   </div>
 
   <!-- INFO BANNER -->
   <div class="info-banner" style="margin-top:60px">
-    🔴 <span class="blink">●</span>&nbsp; Registrations Open — <strong>11 &amp; 12 April 2025</strong> — IIEST Shibpur
-    Campus
+    🔴 <span class="blink">●</span>&nbsp; Registrations Open — <strong>11 &amp; 12 April 2025</strong> — IIEST Shibpur Campus
   </div>
 
   <!-- HERO -->
@@ -51,14 +48,14 @@
       <span class="final">FINAL</span><br>
       <span class="showdown">SHOWDOWN</span>
     </h1>
-    <p class="hero-sub">7 Events &nbsp;·&nbsp; 2 Days &nbsp;·&nbsp; 7 Champion</p>
+    <p class="hero-sub">6 Events &nbsp;·&nbsp; 2 Days &nbsp;·&nbsp; 6 Champions</p>
     <div class="hero-date">
       <div class="date-badge">APR 11, 2025</div>
       <div class="date-badge">APR 12, 2025</div>
     </div>
     <div class="hero-cta">
-      <a href="#register" class="btn-primary">Register Now</a>
-      <a href="#events" class="btn-secondary">View Events</a>
+      <a href="#events" class="btn-primary">Enter the Arena</a>
+      <a href="#schedule" class="btn-secondary">View Schedule</a>
     </div>
   </section>
 
@@ -86,33 +83,23 @@
       <div class="category-label">⚡ Autonomous Events</div>
       <div class="events-grid" style="margin-bottom:40px">
 
-        <div class="event-card">
+        <div class="event-card" onclick="openEventModal('line-follower')">
           <div class="event-num">EVENT 01</div>
           <span class="event-icon">🤖</span>
           <div class="event-name">Line Follower</div>
           <span class="event-type auto">Autonomous</span>
-          <p class="event-desc">Navigate a complex track at maximum speed following only a line. Precision, speed, and
-            smooth curve-handling will separate winners from participants.</p>
+          <p class="event-desc">Navigate a complex track at maximum speed following only a line. Precision, speed, and smooth curve-handling will separate winners from participants.</p>
+          <div class="event-click-hint">Click to register →</div>
           <div class="event-corner"></div>
         </div>
 
-        <div class="event-card">
+        <div class="event-card" onclick="openEventModal('fire-fighter')">
           <div class="event-num">EVENT 02</div>
           <span class="event-icon">🔥</span>
           <div class="event-name">Fire Fighter</div>
           <span class="event-type auto">Autonomous</span>
-          <p class="event-desc">Your bot must detect and extinguish a flame inside a maze-like arena — autonomously. No
-            human control, just pure embedded intelligence.</p>
-          <div class="event-corner"></div>
-        </div>
-
-        <div class="event-card">
-          <div class="event-num">EVENT 03</div>
-          <span class="event-icon">⚖️</span>
-          <div class="event-name">Self-Balancing Bot</div>
-          <span class="event-type auto">Autonomous</span>
-          <p class="event-desc">Build a two-wheeled bot that stays perfectly balanced using PID or advanced control
-            algorithms. Stability under disturbance wins this one.</p>
+          <p class="event-desc">Your bot must detect and extinguish a flame inside a maze-like arena — autonomously. No human control, just pure embedded intelligence.</p>
+          <div class="event-click-hint">Click to register →</div>
           <div class="event-corner"></div>
         </div>
 
@@ -121,50 +108,171 @@
       <div class="category-label">🕹️ Manual / RC Events</div>
       <div class="events-grid">
 
-        <div class="event-card manual">
-          <div class="event-num">EVENT 04</div>
+        <div class="event-card manual" onclick="openEventModal('deathrace')">
+          <div class="event-num">EVENT 03</div>
           <span class="event-icon">🏎️</span>
           <div class="event-name">DeathRace</div>
           <span class="event-type manual">Manual — Car Race</span>
-          <p class="event-desc">High-speed RC car racing on a rugged track with obstacles. Fastest lap time wins, but
-            survival matters — this isn't just about speed.</p>
+          <p class="event-desc">High-speed RC car racing on a rugged track with obstacles. Fastest lap time wins, but survival matters — this isn't just about speed.</p>
+          <div class="event-click-hint">Click to register →</div>
           <div class="event-corner"></div>
         </div>
 
-        <div class="event-card manual">
-          <div class="event-num">EVENT 05</div>
+        <div class="event-card manual" onclick="openEventModal('soccer-bot')">
+          <div class="event-num">EVENT 04</div>
           <span class="event-icon">⚽</span>
           <div class="event-name">Soccer Bot</div>
           <span class="event-type manual">Manual — Soccer</span>
-          <p class="event-desc">Head-to-head robot soccer. Two bots, one ball, one goal. Strategy and control precision
-            will decide who lifts the trophy.</p>
+          <p class="event-desc">Head-to-head robot soccer. Two bots, one ball, one goal. Strategy and control precision will decide who lifts the trophy.</p>
+          <div class="event-click-hint">Click to register →</div>
           <div class="event-corner"></div>
         </div>
 
-        <div class="event-card manual">
-          <div class="event-num">EVENT 06</div>
+        <div class="event-card manual" onclick="openEventModal('robo-rumble')">
+          <div class="event-num">EVENT 05</div>
           <span class="event-icon">💪</span>
           <div class="event-name">Robo-Rumble</div>
           <span class="event-type manual">Manual — Combat</span>
-          <p class="event-desc">The arena's most brutal event. Tug of War between bots + 2 sub-events packed with metal
-            carnage. Only the strongest machine survives the rumble.</p>
+          <p class="event-desc">The arena's most brutal event. Tug of War between bots + 2 sub-events packed with metal carnage. Only the strongest machine survives the rumble.</p>
+          <div class="event-click-hint">Click to register →</div>
           <div class="event-corner"></div>
         </div>
 
-        <div class="event-card manual">
-          <div class="event-num">EVENT 07</div>
+        <div class="event-card manual" onclick="openEventModal('hovercraft')">
+          <div class="event-num">EVENT 06</div>
           <span class="event-icon">🛸</span>
           <div class="event-name">Hovercraft</div>
           <span class="event-type manual">Manual — RC</span>
-          <p class="event-desc">Pilot a custom-built RC hovercraft through a challenging course. Master the art of
-            air-cushion
-            control — speed and precision on any surface wins the race.</p>
+          <p class="event-desc">Pilot a custom-built RC-Hovercraft and Win one to one battle, that will test your control and strategy.</p>
+          <div class="event-click-hint">Click to register →</div>
           <div class="event-corner"></div>
         </div>
 
       </div>
     </div>
   </section>
+
+  <!-- EVENT MODAL -->
+  <div class="modal-overlay" id="eventModal" onclick="closeEventModal(event)">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeEventModal(null, true)">✕</button>
+
+      <!-- INFO PANEL -->
+      <div class="modal-header">
+        <span class="modal-icon" id="modalIcon"></span>
+        <div>
+          <div class="modal-event-num" id="modalNum"></div>
+          <h2 class="modal-title" id="modalTitle"></h2>
+          <span class="modal-type" id="modalType"></span>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-section">
+          <div class="modal-section-label">About the Event</div>
+          <p class="modal-desc" id="modalDesc"></p>
+        </div>
+        <div class="modal-stats" id="modalStats"></div>
+        <div class="modal-section">
+          <div class="modal-section-label">Event Coordinators</div>
+          <div class="modal-coordinators" id="modalCoordinators"></div>
+        </div>
+        <div class="modal-actions">
+          <button class="btn-primary" onclick="showRegisterPanel()">⚡ &nbsp; Register for this Event</button>
+          <button class="btn-rulebook" id="modalRulebookBtn">📄 View Rulebook</button>
+        </div>
+      </div>
+
+      <!-- REGISTRATION PANEL (slides in on Register click) -->
+      <div class="modal-register-panel" id="modalRegisterPanel">
+        <div class="modal-reg-header">
+          <button class="modal-back-btn" onclick="hideRegisterPanel()">← Back</button>
+          <div>
+            <div class="modal-reg-event-tag" id="regPanelEventTag"></div>
+            <h3 class="modal-reg-title">Register Your Team</h3>
+          </div>
+        </div>
+
+        <div id="modal-form-area">
+          <div class="modal-form-grid">
+
+            <div class="form-group">
+              <label>Team Name <span class="req">*</span></label>
+              <input type="text" id="m-teamName" placeholder="e.g. Team RoboKing">
+            </div>
+            <div class="form-group">
+              <label>Leader Name <span class="req">*</span></label>
+              <input type="text" id="m-leaderName" placeholder="Full name">
+            </div>
+
+            <div class="form-group">
+              <label>Email <span class="req">*</span></label>
+              <input type="email" id="m-email" placeholder="leader@email.com">
+            </div>
+            <div class="form-group">
+              <label>Phone <span class="req">*</span></label>
+              <input type="tel" id="m-phone" placeholder="10-digit number" maxlength="10"
+                oninput="sanitizeModalPhone(this)" inputmode="numeric">
+              <span class="field-hint" id="m-phoneHint"></span>
+            </div>
+
+            <div class="form-group modal-form-full">
+              <label>College / Institution <span class="req">*</span></label>
+              <input type="text" id="m-college" value="INDIAN INSTITUTE OF ENGINEERING SCIENCE AND TECHNOLOGY, SHIBPUR">
+            </div>
+
+            <div class="form-group">
+              <label>Team Size <span class="req">*</span></label>
+              <select id="m-teamSize">
+                <option value="">Select size</option>
+                <option value="2">2 Members</option>
+                <option value="3">3 Members</option>
+                <option value="4">4 Members</option>
+                <option value="5">5 Members</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Year of Study <span class="req">*</span></label>
+              <select id="m-year">
+                <option value="">Select year</option>
+                <option value="1st Year">1st Year</option>
+                <option value="2nd Year">2nd Year</option>
+                <option value="3rd Year">3rd Year</option>
+                <option value="4th Year">4th Year</option>
+                <option value="PG / PhD">PG / PhD</option>
+              </select>
+            </div>
+
+            <div class="form-group modal-form-full">
+              <label>Participating In</label>
+              <div class="modal-events-list" id="modalEventsList"></div>
+            </div>
+
+            <div class="form-group modal-form-full">
+              <label>Notes / Questions</label>
+              <textarea id="m-notes" placeholder="Any special requirements or questions..."></textarea>
+            </div>
+          </div>
+
+          <div id="modal-form-error"></div>
+          <button class="submit-btn" id="m-submitBtn" onclick="submitModalForm()">
+            <span id="m-submitText">⚡ &nbsp; CONFIRM REGISTRATION</span>
+            <span id="m-submitLoader" style="display:none;">⏳ &nbsp; SUBMITTING...</span>
+          </button>
+        </div>
+
+        <!-- SUCCESS STATE -->
+        <div class="success-msg" id="modal-successMsg">
+          <div class="success-icon">🤖</div>
+          <h3>You're In, Warrior!</h3>
+          <p>KEEP THE REG. ID FOR FUTURE REFERENCE.<br>Registration received. Prepare your bots.<br>The arena awaits.</p>
+          <div class="reg-id" id="modal-regIdDisplay"></div>
+          <br><br>
+          <button class="btn-secondary" onclick="closeEventModal(null,true)">Back to Events</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
 
   <div class="divider"></div>
 
@@ -180,85 +288,54 @@
         <div class="schedule-day-title">📅 Day 1 — April 11</div>
         <div class="schedule-item">
           <div class="sch-time">17:00</div>
-          <div>
-            <div class="sch-event">Registration &amp; Opening</div>
-          </div>
+          <div><div class="sch-event">Registration &amp; Opening</div></div>
         </div>
         <div class="schedule-item">
           <div class="sch-time">17:30</div>
-          <div>
-            <div class="sch-event">Line Follower &amp; Self-Balancing</div>
-            <div class="sch-type">Autonomous Heats</div>
-          </div>
+          <div><div class="sch-event">Line Follower</div><div class="sch-type">Autonomous Heats</div></div>
         </div>
         <div class="schedule-item">
           <div class="sch-time">18:30</div>
-          <div>
-            <div class="sch-event">Fire Fighter</div>
-            <div class="sch-type">Autonomous Heats</div>
-          </div>
+          <div><div class="sch-event">Fire Fighter</div><div class="sch-type">Autonomous Heats</div></div>
         </div>
         <div class="schedule-item">
           <div class="sch-time">19:15</div>
-          <div>
-            <div class="sch-event">Autonomous Finals</div>
-            <div class="sch-type">All Autonomous Arenas</div>
-          </div>
+          <div><div class="sch-event">Autonomous Finals</div><div class="sch-type">All Autonomous Arenas</div></div>
         </div>
         <div class="schedule-item">
           <div class="sch-time">20:00</div>
-          <div>
-            <div class="sch-event">Day 1 Wrap-up</div>
-          </div>
+          <div><div class="sch-event">Day 1 Wrap-up</div></div>
         </div>
       </div>
       <div class="schedule-day">
         <div class="schedule-day-title">📅 Day 2 — April 12</div>
         <div class="schedule-item">
           <div class="sch-time">10:00</div>
-          <div>
-            <div class="sch-event">DeathRace &amp; Hovercraft</div>
-            <div class="sch-type">Manual Heats</div>
-          </div>
+          <div><div class="sch-event">DeathRace &amp; Hovercraft</div><div class="sch-type">Manual Heats</div></div>
         </div>
         <div class="schedule-item">
           <div class="sch-time">13:00</div>
-          <div>
-            <div class="sch-event">Lunch Break</div>
-          </div>
+          <div><div class="sch-event">Lunch Break</div></div>
         </div>
         <div class="schedule-item">
           <div class="sch-time">14:00</div>
-          <div>
-            <div class="sch-event">Soccer Bot League</div>
-            <div class="sch-type">Manual Rounds</div>
-          </div>
+          <div><div class="sch-event">Soccer Bot League</div><div class="sch-type">Manual Rounds</div></div>
         </div>
         <div class="schedule-item">
           <div class="sch-time">15:30</div>
-          <div>
-            <div class="sch-event">Robo-Rumble</div>
-            <div class="sch-type">Manual Rounds</div>
-          </div>
+          <div><div class="sch-event">Robo-Rumble</div><div class="sch-type">Manual Rounds</div></div>
         </div>
         <div class="schedule-item">
           <div class="sch-time">17:30</div>
-          <div>
-            <div class="sch-event">Grand Finals</div>
-            <div class="sch-type">All Manual Events</div>
-          </div>
+          <div><div class="sch-event">Grand Finals</div><div class="sch-type">All Manual Events</div></div>
         </div>
         <div class="schedule-item">
           <div class="sch-time">19:30</div>
-          <div>
-            <div class="sch-event">Prize Distribution</div>
-          </div>
+          <div><div class="sch-event">Prize Distribution</div></div>
         </div>
         <div class="schedule-item">
           <div class="sch-time">21:00</div>
-          <div>
-            <div class="sch-event">Event Wrap-up</div>
-          </div>
+          <div><div class="sch-event">Event Wrap-up</div></div>
         </div>
       </div>
     </div>
@@ -266,131 +343,124 @@
 
   <div class="divider"></div>
 
-  <!-- REGISTER -->
-  <section class="register-section" id="register">
+  <!-- TEAM SECTION -->
+  <section class="team-section" id="team">
     <div class="section-header">
-      <p class="section-tag">Join the Battle</p>
-      <h2 class="section-title">Register Your <span>Team</span></h2>
+      <p class="section-tag">The Minds Behind It</p>
+      <h2 class="section-title">Meet the <span>Team</span></h2>
       <div class="section-line"></div>
     </div>
 
-    <div class="register-wrap">
+    <div class="team-grid" style="max-width:1100px; margin:0 auto;">
 
-      <div id="form-area">
-        <div class="form-grid">
-
-          <div class="form-group">
-            <label>Team Name *</label>
-            <input type="text" id="teamName" placeholder="e.g. Team RoboKing" required>
+      <!-- CORE TEAM -->
+      <div class="team-row-label">Core Team</div>
+      <div class="team-row">
+        <div class="team-card">
+          <div class="team-img-wrap">
+            <img src="images/pratyush.jpg" alt="Pratyush Dhittal" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="team-img-placeholder">🤖</div>
           </div>
-          <div class="form-group">
-            <label>Team Leader Name *</label>
-            <input type="text" id="leaderName" placeholder="Full name" required>
+          <div class="team-info">
+            <div class="team-name">Pratyush Dhittal</div>
+            <div class="team-role">Secretary</div>
           </div>
-
-          <div class="form-group">
-            <label>Email *</label>
-            <input type="email" id="email" placeholder="leader@email.com" required>
-          </div>
-          <div class="form-group">
-            <label>Phone Number *</label>
-            <input type="tel" id="phone" placeholder="+91 XXXXXXXXXX" required>
-          </div>
-
-          <div class="form-group">
-            <label>College / Institution *</label>
-            <input type="text" id="college" placeholder="Your college name" required>
-          </div>
-          <div class="form-group">
-            <label>Team Size *</label>
-            <select id="teamSize">
-              <option value="">Select size</option>
-              <option value="1">1 Member</option>
-              <option value="2">2 Members</option>
-              <option value="3">3 Members</option>
-              <option value="4">4 Members</option>
-              <option value="5">5 Members</option>
-            </select>
-          </div>
-
-          <div class="form-group form-full">
-            <label>Select Events * (choose all you want to participate in)</label>
-            <div class="events-checkboxes">
-              <label class="checkbox-item">
-                <input type="checkbox" name="events" value="Line Follower">
-                <div class="checkbox-col">
-                  <span>Line Follower</span>
-                  <span class="event-tag">AUTONOMOUS</span>
-                </div>
-              </label>
-              <label class="checkbox-item">
-                <input type="checkbox" name="events" value="Fire Fighter">
-                <div class="checkbox-col">
-                  <span>Fire Fighter</span>
-                  <span class="event-tag">AUTONOMOUS</span>
-                </div>
-              </label>
-              <label class="checkbox-item">
-                <input type="checkbox" name="events" value="Self-Balancing Bot">
-                <div class="checkbox-col">
-                  <span>Self-Balancing Bot</span>
-                  <span class="event-tag">AUTONOMOUS</span>
-                </div>
-              </label>
-              <label class="checkbox-item">
-                <input type="checkbox" name="events" value="DeathRace">
-                <div class="checkbox-col">
-                  <span>DeathRace</span>
-                  <span class="event-tag">MANUAL</span>
-                </div>
-              </label>
-              <label class="checkbox-item">
-                <input type="checkbox" name="events" value="Soccer Bot">
-                <div class="checkbox-col">
-                  <span>Soccer Bot</span>
-                  <span class="event-tag">MANUAL</span>
-                </div>
-              </label>
-              <label class="checkbox-item">
-                <input type="checkbox" name="events" value="Robo-Rumble">
-                <div class="checkbox-col">
-                  <span>Robo-Rumble</span>
-                  <span class="event-tag">MANUAL — COMBAT</span>
-                </div>
-              </label>
-              <label class="checkbox-item">
-                <input type="checkbox" name="events" value="Hovercraft">
-                <div class="checkbox-col">
-                  <span>Hovercraft</span>
-                  <span class="event-tag">MANUAL — RC</span>
-                </div>
-              </label>
-            </div>
-          </div>
-
-          <div class="form-group form-full">
-            <label>Additional Info / Questions</label>
-            <textarea id="notes" placeholder="Any questions, special requirements, or notes..."></textarea>
-          </div>
-
         </div>
-
-        <div id="form-error"
-          style="display:none; color:var(--accent2); font-family:'Orbitron',monospace; font-size:11px; letter-spacing:2px; margin-top:16px; text-align:center;">
+        <div class="team-card">
+          <div class="team-img-wrap">
+            <img src="images/shourya.jpg" alt="Shourya Deep Bera" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="team-img-placeholder">🤖</div>
+          </div>
+          <div class="team-info">
+            <div class="team-name">Shourya Deep Bera</div>
+            <div class="team-role">Treasurer</div>
+          </div>
         </div>
-
-        <button class="submit-btn" id="submitBtn" onclick="submitForm()">⚡ &nbsp; REGISTER FOR BATTLE</button>
+        <div class="team-card">
+          <div class="team-img-wrap">
+            <img src="images/mandeep.jpg" alt="Mandeep Datta Narwade" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="team-img-placeholder">🤖</div>
+          </div>
+          <div class="team-info">
+            <div class="team-name">Mandeep Datta Narwade</div>
+            <div class="team-role">Assistant Secretary</div>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-img-wrap">
+            <img src="images/aneesh.jpg" alt="Aneesh Arya" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="team-img-placeholder">🤖</div>
+          </div>
+          <div class="team-info">
+            <div class="team-name">Aneesh Arya</div>
+            <div class="team-role">Design Head</div>
+          </div>
+        </div>
       </div>
 
-      <!-- SUCCESS STATE -->
-      <div class="success-msg" id="successMsg">
-        <div class="success-icon">🤖</div>
-        <h3>You're In, Warrior!</h3>
-        <p>Your registration has been received. You'll get a confirmation email shortly.<br>Prepare your bots. The arena
-          awaits.</p>
-        <div class="reg-id" id="regIdDisplay"></div>
-        <br><br>
-        <button class="btn-secondary" onclick="resetForm()">Register Another Team</button>
+      <!-- EVENT COORDINATORS -->
+      <div class="team-row-label">Event Coordinators</div>
+      <div class="team-row">
+        <div class="team-card coord">
+          <div class="team-img-wrap small">
+            <img src="images/vineet.jpg" alt="Vineet Jogi" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="team-img-placeholder">⚙️</div>
+          </div>
+          <div class="team-info">
+            <div class="team-name">Vineet Jogi</div>
+            <div class="team-role">Line Follower</div>
+          </div>
+        </div>
+        <div class="team-card coord">
+          <div class="team-img-wrap small">
+            <img src="images/rahul.jpg" alt="Rahul Kumar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="team-img-placeholder">⚙️</div>
+          </div>
+          <div class="team-info">
+            <div class="team-name">Rahul Kumar</div>
+            <div class="team-role">Fire Fighter</div>
+          </div>
+        </div>
+        <div class="team-card coord">
+          <div class="team-img-wrap small">
+            <img src="images/shivangi.jpg" alt="Shivangi Jha" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="team-img-placeholder">⚙️</div>
+          </div>
+          <div class="team-info">
+            <div class="team-name">Shivangi Jha</div>
+            <div class="team-role">DeathRace</div>
+          </div>
+        </div>
+        <div class="team-card coord">
+          <div class="team-img-wrap small">
+            <img src="images/gaurav.jpg" alt="Gaurav Yadav" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="team-img-placeholder">⚙️</div>
+          </div>
+          <div class="team-info">
+            <div class="team-name">Gaurav Yadav</div>
+            <div class="team-role">Soccer Bot</div>
+          </div>
+        </div>
+        <div class="team-card coord">
+          <div class="team-img-wrap small">
+            <img src="images/anamika.jpg" alt="Anamika Roy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="team-img-placeholder">⚙️</div>
+          </div>
+          <div class="team-info">
+            <div class="team-name">Anamika Roy</div>
+            <div class="team-role">Robo-Rumble</div>
+          </div>
+        </div>
+        <div class="team-card coord">
+          <div class="team-img-wrap small">
+            <img src="images/pushpika.jpg" alt="Pushpika Patel" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="team-img-placeholder">⚙️</div>
+          </div>
+          <div class="team-info">
+            <div class="team-name">Pushpika Patel</div>
+            <div class="team-role">Hovercraft</div>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -400,12 +470,9 @@
   <footer>
     <div class="footer-logo">ROBO<span>DARSHAN</span></div>
     <div class="footer-text">The Robotics Society of IIEST Shibpur &nbsp;·&nbsp; THE FINAL SHOWDOWN 2025</div>
-    <div class="footer-text"
-      style="color:var(--accent); font-family:'Orbitron',monospace; font-size:11px; letter-spacing:2px;">11–12 APR 2025
-    </div>
+    <div class="footer-text" style="color:var(--accent); font-family:'Orbitron',monospace; font-size:11px; letter-spacing:2px;">11–12 APR 2025</div>
   </footer>
 
   <script src="script.js"></script>
 </body>
-
 </html>
