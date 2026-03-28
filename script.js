@@ -45,7 +45,7 @@ const EVENT_DATA = {
     num: 'EVENT 04', icon: '⚽', name: 'Soccer Bot',
     type: 'manual', typeLabel: 'Manual — Soccer',
     desc: 'Two teams of RC bots face off in a head-to-head soccer match. League rounds followed by knockouts determine the champion. Bots must stay within dimensional limits. Strategy and control precision decide who wins.',
-    stats: [{ val: '2–3', key: 'Team Size' }, { val: 'MPU6050+BMP280', key: '1st Prize' }, { val: 'MQ-2 GAS SENSOR', key: '2nd Prize' }],
+    stats: [{ val: '2–5', key: 'Team Size' }, { val: 'MPU6050+BMP280', key: '1st Prize' }, { val: 'MQ-2 GAS SENSOR', key: '2nd Prize' }],
     coordinators: [
       { name: 'Gaurav Yadav', contact: '+91 9236479543', img: 'images/gaurav.jpg' },
       { name: 'Vineet Jogi', contact: '+91 9076142724', img: 'images/vineet.jpg' }
@@ -56,7 +56,7 @@ const EVENT_DATA = {
     num: 'EVENT 05', icon: '💪', name: 'Robo-Rumble',
     type: 'manual', typeLabel: 'Manual — Combat',
     desc: 'The most ferocious event of the arena. Robo-Rumble is a 3-part combat challenge: (1) Tug of War — two bots pull against each other on a rope, (2) Sub-Event 1, and (3) Sub-Event 2. Your bot must be built to withstand punishment.',
-    stats: [{ val: '2–5', key: 'Team Size' }, { val: '', key: '1st Prize' }, { val: 'Ultrasonic Sensor', key: '2nd Prize' }],
+    stats: [{ val: '2–5', key: 'Team Size' }, { val: 'not decided', key: '1st Prize' }, { val: 'Ultrasonic Sensor', key: '2nd Prize' }],
     coordinators: [
       { name: 'Anamika Roy', contact: '+91 8147021850', img: 'images/anamika.jpg' },
       { name: 'Rahul Kumar', contact: '+91 7050472750', img: 'images/rahul.jpg' }
@@ -67,7 +67,7 @@ const EVENT_DATA = {
     num: 'EVENT 06', icon: '🛸', name: 'Hovercraft',
     type: 'manual', typeLabel: 'Manual — RC',
     desc: 'Pilot a custom-built RC hovercraft through a challenging course. Your hovercraft must be self-built within specified dimensions and weight limits. The course includes turns, ramps, and surface changes. Master the unique air-cushion physics — speed and precision wins.',
-    stats: [{ val: '2–4', key: 'Team Size' }, { val: '', key: '1st Prize' }, { val: '₹', key: '2nd Prize' }],
+    stats: [{ val: '2–4', key: 'Team Size' }, { val: 'not decided', key: '1st Prize' }, { val: 'not decided', key: '2nd Prize' }],
     coordinators: [
       { name: 'Pushpika Patel', contact: '+91 8318575758', img: 'images/pushpika.jpg' },
       { name: 'Anchal Chaudhary', contact: '+91 9336049348', img: 'images/anchal.jpg' }
@@ -106,7 +106,7 @@ function closeMobileNav() {
 // COUNTDOWN — pinned to IST (UTC+5:30)
 // =============================================
 function updateCountdown() {
-  const target = new Date('2025-04-11T17:00:00+05:30');
+  const target = new Date('2026-04-11T17:00:00+10:00');
   const diff = target - new Date();
   if (diff <= 0) {
     ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => document.getElementById(id).textContent = '00');
