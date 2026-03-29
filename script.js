@@ -106,7 +106,7 @@ function closeMobileNav() {
 // COUNTDOWN — pinned to IST (UTC+5:30)
 // =============================================
 function updateCountdown() {
-  const target = new Date('2026-04-11T17:00:00+05 :30');
+  const target = new Date('2026-04-11T17:00:00+05:30');
   const diff = target - new Date();
   if (diff <= 0) {
     ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => document.getElementById(id).textContent = '00');
