@@ -42,7 +42,7 @@ const EVENT_DATA = {
     rulebook: 'rulebooks/deathrace.pdf'
   },
   'soccer-bot': {
-    num: 'EVENT 04', icon: '⚽', name: 'Soccer Bot',
+    num: 'EVENT 04', icon: '⚽', name: 'Robo-Soccer',
     type: 'manual', typeLabel: 'Manual — Soccer',
     desc: 'Two teams of RC bots face off in a head-to-head soccer match. League rounds followed by knockouts determine the champion. Bots must stay within dimensional limits. Strategy and control precision decide who wins.',
     stats: [{ val: '2–5', key: 'Team Size' }, { val: 'MPU6050+BMP280', key: '1st Prize' }, { val: 'MQ-2 GAS SENSOR', key: '2nd Prize' }],
@@ -50,7 +50,7 @@ const EVENT_DATA = {
       { name: 'Gaurav Yadav', contact: '+91 9236479543', img: 'images/gaurav.jpg' },
       { name: 'Vineet Jogi', contact: '+91 9076142724', img: 'images/vineet.jpg' }
     ],
-    rulebook: 'rulebooks/soccerbot.pdf'
+    rulebook: 'rulebooks/robosoccer.pdf'
   },
   'robo-rumble': {
     num: 'EVENT 05', icon: '💪', name: 'Robo-Rumble',
