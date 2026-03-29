@@ -2,7 +2,7 @@
 // ⚙️ GOOGLE SHEETS CONFIG
 // Paste your deployed Apps Script URL below
 // =============================================
-const SHEET_URL = 'https://script.google.com/macros/s/AKfycbzEe9zXKXIu21akU2s44-RgGUKY873kFyXXxO1qwSj2L72ZouYlfnhlr4xNcxAB4mVY/exec';
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwvM4TbJzWeu8h7aTOn2O4CYiPnZv9SnFiORcYUK-1y3gAZ-EVRX7Pi-80iw7MQMMhjcQ/exec';
 
 // =============================================
 // EVENT DATA — Real coordinator names updated
@@ -327,7 +327,7 @@ async function submitModalForm() {
 
   // Send to Google Sheets
   try {
-    if (SHEET_URL && SHEET_URL !== 'https://script.google.com/macros/s/AKfycbzEe9zXKXIu21akU2s44-RgGUKY873kFyXXxO1qwSj2L72ZouYlfnhlr4xNcxAB4mVY/exec') {
+    if (SHEET_URL && SHEET_URL !== 'https://script.google.com/macros/s/AKfycbwvM4TbJzWeu8h7aTOn2O4CYiPnZv9SnFiORcYUK-1y3gAZ-EVRX7Pi-80iw7MQMMhjcQ/exec') {
       await fetch(SHEET_URL, {
         method: 'POST',
         mode: 'no-cors',
