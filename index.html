@@ -35,7 +35,7 @@
 
   <!-- INFO BANNER -->
   <div class="info-banner" style="margin-top:60px">
-    🔴 <span class="blink">●</span>&nbsp; Registrations Open — <strong>11 &amp; 12 April 2026</strong> — IIEST Shibpur Campus
+    🔴 <span class="blink">●</span>&nbsp; Registrations Open — <strong>11 &amp; 12 April 2025</strong> — IIEST Shibpur Campus
   </div>
 
   <!-- HERO -->
@@ -50,8 +50,8 @@
     </h1>
     <p class="hero-sub">6 Events &nbsp;·&nbsp; 2 Days &nbsp;·&nbsp; 6 Champions</p>
     <div class="hero-date">
-      <div class="date-badge">APR 11, 2026</div>
-      <div class="date-badge">APR 12, 2026</div>
+      <div class="date-badge">APR 11, 2025</div>
+      <div class="date-badge">APR 12, 2025</div>
     </div>
     <div class="hero-cta">
       <a href="#events" class="btn-primary">Enter the Arena</a>
@@ -121,7 +121,7 @@
         <div class="event-card manual" onclick="openEventModal('soccer-bot')">
           <div class="event-num">EVENT 04</div>
           <span class="event-icon">⚽</span>
-          <div class="event-name">Robo-Soccer</div>
+          <div class="event-name">Soccer Bot</div>
           <span class="event-type manual">Manual — Soccer</span>
           <p class="event-desc">Head-to-head robot soccer. Two bots, one ball, one goal. Strategy and control precision will decide who lifts the trophy.</p>
           <div class="event-click-hint">Click to register →</div>
@@ -143,7 +143,7 @@
           <span class="event-icon">🛸</span>
           <div class="event-name">Hovercraft</div>
           <span class="event-type manual">Manual — RC</span>
-          <p class="event-desc">Pilot a custom-built RC-Hovercraft and Win one to one battle, that will test your control and strategy.</p>
+          <p class="event-desc">Pilot a custom-built RC hovercraft through a challenging course. Master the art of air-cushion control — speed and precision on any surface wins the race.</p>
           <div class="event-click-hint">Click to register →</div>
           <div class="event-corner"></div>
         </div>
@@ -222,12 +222,11 @@
 
             <div class="form-group">
               <label>Team Size <span class="req">*</span></label>
-              <select id="m-teamSize">
+              <select id="m-teamSize" onchange="updateTeammateFields(this.value)">
                 <option value="">Select size</option>
                 <option value="2">2 Members</option>
                 <option value="3">3 Members</option>
                 <option value="4">4 Members</option>
-                <option value="5">5 Members</option>
               </select>
             </div>
             <div class="form-group">
@@ -240,6 +239,12 @@
                 <option value="4th Year">4th Year</option>
                 <option value="PG / PhD">PG / PhD</option>
               </select>
+            </div>
+
+            <!-- DYNAMIC TEAMMATE FIELDS -->
+            <div class="modal-form-full" id="teammateFields" style="display:none;">
+              <div class="teammate-section-label">Teammate Details</div>
+              <div class="teammate-fields-wrap" id="teammateFieldsWrap"></div>
             </div>
 
             <div class="form-group modal-form-full">
@@ -264,7 +269,7 @@
         <div class="success-msg" id="modal-successMsg">
           <div class="success-icon">🤖</div>
           <h3>You're In, Warrior!</h3>
-          <p>KEEP THE REG. ID FOR FUTURE REFERENCE.<br>Registration received. Prepare your bots.<br>The arena awaits.</p>
+          <p>Registration received. Prepare your bots.<br>The arena awaits.</p>
           <div class="reg-id" id="modal-regIdDisplay"></div>
           <br><br>
           <button class="btn-secondary" onclick="closeEventModal(null,true)">Back to Events</button>
@@ -388,11 +393,21 @@
         </div>
         <div class="team-card">
           <div class="team-img-wrap">
-            <img src="images/aneesh.jpg" alt="Aneesh Arya" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <img src="images/mufiz.jpg" alt="Mufiz Liya" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="team-img-placeholder">🤖</div>
           </div>
           <div class="team-info">
-            <div class="team-name">Aneesh Arya</div>
+            <div class="team-name">Mufiz Liya</div>
+            <div class="team-role">Event Head</div>
+          </div>
+        </div>
+        <div class="team-card">
+          <div class="team-img-wrap">
+            <img src="images/pushpika.jpg" alt="Pushpika Patel" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="team-img-placeholder">🤖</div>
+          </div>
+          <div class="team-info">
+            <div class="team-name">Pushpika Patel</div>
             <div class="team-role">Design Head</div>
           </div>
         </div>
@@ -403,7 +418,7 @@
       <div class="team-row">
         <div class="team-card coord">
           <div class="team-img-wrap small">
-            <img src="images/vineet.jpg" alt="Vineet Jogi" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <img src="images/coord1.jpg" alt="Vineet Jogi" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="team-img-placeholder">⚙️</div>
           </div>
           <div class="team-info">
@@ -413,7 +428,7 @@
         </div>
         <div class="team-card coord">
           <div class="team-img-wrap small">
-            <img src="images/rahul.jpg" alt="Rahul Kumar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <img src="images/coord2.jpg" alt="Rahul Kumar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="team-img-placeholder">⚙️</div>
           </div>
           <div class="team-info">
@@ -423,7 +438,7 @@
         </div>
         <div class="team-card coord">
           <div class="team-img-wrap small">
-            <img src="images/shivangi.jpg" alt="Shivangi Jha" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <img src="images/coord3.jpg" alt="Shivangi Jha" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="team-img-placeholder">⚙️</div>
           </div>
           <div class="team-info">
@@ -433,7 +448,7 @@
         </div>
         <div class="team-card coord">
           <div class="team-img-wrap small">
-            <img src="images/gaurav.jpg" alt="Gaurav Yadav" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <img src="images/coord4.jpg" alt="Gaurav Yadav" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="team-img-placeholder">⚙️</div>
           </div>
           <div class="team-info">
@@ -443,7 +458,7 @@
         </div>
         <div class="team-card coord">
           <div class="team-img-wrap small">
-            <img src="images/anamika.jpg" alt="Anamika Roy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <img src="images/coord5.jpg" alt="Anamika Roy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="team-img-placeholder">⚙️</div>
           </div>
           <div class="team-info">
@@ -453,11 +468,11 @@
         </div>
         <div class="team-card coord">
           <div class="team-img-wrap small">
-            <img src="images/pushpika.jpg" alt="Pushpika Patel" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <img src="images/anchal.jpg" alt="Anchal Chaudhary" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="team-img-placeholder">⚙️</div>
           </div>
           <div class="team-info">
-            <div class="team-name">Pushpika Patel</div>
+            <div class="team-name">Anchal Chaudhary</div>
             <div class="team-role">Hovercraft</div>
           </div>
         </div>
@@ -469,8 +484,8 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-logo">ROBO<span>DARSHAN</span></div>
-    <div class="footer-text">The Robotics Society of IIEST Shibpur &nbsp;·&nbsp; THE FINAL SHOWDOWN 2026</div>
-    <div class="footer-text" style="color:var(--accent); font-family:'Orbitron',monospace; font-size:11px; letter-spacing:2px;">11–12 APR 2026</div>
+    <div class="footer-text">The Robotics Society of IIEST Shibpur &nbsp;·&nbsp; THE FINAL SHOWDOWN 2025</div>
+    <div class="footer-text" style="color:var(--accent); font-family:'Orbitron',monospace; font-size:11px; letter-spacing:2px;">11–12 APR 2025</div>
   </footer>
 
   <script src="script.js"></script>

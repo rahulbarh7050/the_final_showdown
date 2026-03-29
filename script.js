@@ -2,7 +2,7 @@
 // ⚙️ GOOGLE SHEETS CONFIG
 // Paste your deployed Apps Script URL below
 // =============================================
-const SHEET_URL = 'https://script.google.com/macros/s/AKfycbz-tBk7gFj6OVWs2ng1hVK-ZOtXxM9oRZeyjMWZCiuR-DUVi3xsfizGdOgV3r4egLVsBg/exec';
+const SHEET_URL = 'YOUR_APPS_SCRIPT_URL_HERE';
 
 // =============================================
 // EVENT DATA — Real coordinator names updated
@@ -12,7 +12,7 @@ const EVENT_DATA = {
     num: 'EVENT 01', icon: '🤖', name: 'Line Follower',
     type: 'auto', typeLabel: 'Autonomous',
     desc: 'Navigate a complex track at maximum speed following only a line. Your bot must use sensors to detect and follow a predefined path through curves, intersections, and speed bumps. The fastest bot with the cleanest run wins. Multiple heats will determine finalists.',
-    stats: [{ val: '2–5', key: 'Team Size' }, { val: 'ESP8266', key: '1st Prize' }, { val: 'Colour sensor', key: '2nd Prize' }],
+    stats: [{ val: '2–4', key: 'Team Size' }, { val: 'ESP8266', key: '1st Prize' }, { val: 'Colour sensor', key: '2nd Prize' }],
     coordinators: [
       { name: 'Vineet Jogi', contact: '+91 9076142724', img: 'images/vineet.jpg' },
       { name: 'Gaurav Yadav', contact: '+91 9236479543', img: 'images/gaurav.jpg' }
@@ -23,7 +23,7 @@ const EVENT_DATA = {
     num: 'EVENT 02', icon: '🔥', name: 'Fire Fighter',
     type: 'auto', typeLabel: 'Autonomous',
     desc: 'Your bot must autonomously navigate a maze, detect a live flame using sensors, and extinguish it — all without any human control. You may use any combination of flame sensors, ultrasonic sensors, and extinguishing mechanisms. Speed and accuracy both count toward scoring.',
-    stats: [{ val: '2–5', key: 'Team Size' }, { val: 'Arduino Nano', key: '1st Prize' }, { val: 'PIR Sensor', key: '2nd Prize' }],
+    stats: [{ val: '2–4', key: 'Team Size' }, { val: 'Arduino Nano', key: '1st Prize' }, { val: 'PIR Sensor', key: '2nd Prize' }],
     coordinators: [
       { name: 'Rahul Kumar', contact: '+91 7050472750', img: 'images/rahul.jpg' },
       { name: 'Shivangi Jha', contact: '+91 9149084945', img: 'images/shivangi.jpg' }
@@ -34,7 +34,7 @@ const EVENT_DATA = {
     num: 'EVENT 03', icon: '🏎️', name: 'DeathRace',
     type: 'manual', typeLabel: 'Manual — Car Race',
     desc: 'High-speed RC car racing on a rugged obstacle track. Multiple laps, timed runs, and elimination heats. Your car must survive the track — collisions, flips, and breakdown are common. Fastest cumulative lap time across clean runs decides the winner.',
-    stats: [{ val: '2-5', key: 'Team Size' }, { val: 'ESP32', key: '1st Prize' }, { val: 'Gas Sensor Module', key: '2nd Prize' }],
+    stats: [{ val: '2–4', key: 'Team Size' }, { val: 'ESP32', key: '1st Prize' }, { val: 'Gas Sensor Module', key: '2nd Prize' }],
     coordinators: [
       { name: 'Shivangi Jha', contact: '+91 9149084945', img: 'images/shivangi.jpg' },
       { name: 'Pushpika Patel', contact: '+91 8318575758', img: 'images/pushpika.jpg' }
@@ -45,7 +45,7 @@ const EVENT_DATA = {
     num: 'EVENT 04', icon: '⚽', name: 'Robo-Soccer',
     type: 'manual', typeLabel: 'Manual — Soccer',
     desc: 'Two teams of RC bots face off in a head-to-head soccer match. League rounds followed by knockouts determine the champion. Bots must stay within dimensional limits. Strategy and control precision decide who wins.',
-    stats: [{ val: '2–5', key: 'Team Size' }, { val: 'MPU6050+BMP280', key: '1st Prize' }, { val: 'MQ-2 GAS SENSOR', key: '2nd Prize' }],
+    stats: [{ val: '2–4', key: 'Team Size' }, { val: 'MPU6050+BMP280', key: '1st Prize' }, { val: 'MQ-2 GAS SENSOR', key: '2nd Prize' }],
     coordinators: [
       { name: 'Gaurav Yadav', contact: '+91 9236479543', img: 'images/gaurav.jpg' },
       { name: 'Vineet Jogi', contact: '+91 9076142724', img: 'images/vineet.jpg' }
@@ -56,9 +56,9 @@ const EVENT_DATA = {
     num: 'EVENT 05', icon: '💪', name: 'Robo-Rumble',
     type: 'manual', typeLabel: 'Manual — Combat',
     desc: 'The most ferocious event of the arena. Robo-Rumble is a 3-part combat challenge: (1) Tug of War — two bots pull against each other on a rope, (2) Sub-Event 1, and (3) Sub-Event 2. Your bot must be built to withstand punishment.',
-    stats: [{ val: '2–5', key: 'Team Size' }, { val: 'not decided', key: '1st Prize' }, { val: 'Ultrasonic Sensor', key: '2nd Prize' }],
+    stats: [{ val: '2–4', key: 'Team Size' }, { val: 'not decided', key: '1st Prize' }, { val: 'Ultrasonic Sensor', key: '2nd Prize' }],
     coordinators: [
-      { name: 'Anamika Roy', contact: '+91 8147021850', img: 'images/anamika.jpg' },
+      { name: 'Anamika Roy', contact: '+91 9863812944', img: 'images/anamika.jpg' },
       { name: 'Rahul Kumar', contact: '+91 7050472750', img: 'images/rahul.jpg' }
     ],
     rulebook: 'rulebooks/roborumble.pdf'
@@ -106,7 +106,7 @@ function closeMobileNav() {
 // COUNTDOWN — pinned to IST (UTC+5:30)
 // =============================================
 function updateCountdown() {
-  const target = new Date('2026-04-11T17:00:00+05:30');
+  const target = new Date('2025-04-11T17:00:00+05:30');
   const diff = target - new Date();
   if (diff <= 0) {
     ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => document.getElementById(id).textContent = '00');
@@ -208,6 +208,32 @@ function hideRegisterPanel(silent) {
 }
 
 // =============================================
+// DYNAMIC TEAMMATE FIELDS
+// =============================================
+function updateTeammateFields(size) {
+  const container = document.getElementById('teammateFields');
+  const wrap = document.getElementById('teammateFieldsWrap');
+  const count = parseInt(size) - 1; // teammates = total - leader
+
+  if (!size || count <= 0) {
+    container.style.display = 'none';
+    wrap.innerHTML = '';
+    return;
+  }
+
+  container.style.display = 'block';
+  wrap.innerHTML = '';
+
+  for (let i = 1; i <= count; i++) {
+    wrap.innerHTML += `
+      <div class="teammate-row">
+        <span class="teammate-num">TEAMMATE ${i}</span>
+        <input type="text" id="m-teammate-${i}" placeholder="Full name of teammate ${i}">
+      </div>`;
+  }
+}
+
+// =============================================
 // PHONE VALIDATION
 // =============================================
 function sanitizeModalPhone(input) {
@@ -257,6 +283,14 @@ async function submitModalForm() {
   const extraEvents = [];
   const allEvents   = [currentEventName];
 
+  // Collect teammate names
+  const size = parseInt(teamSize) || 1;
+  const teammates = [];
+  for (let i = 1; i <= size - 1; i++) {
+    const el = document.getElementById(`m-teammate-${i}`);
+    teammates.push(el ? el.value.trim() : '');
+  }
+
   // Validation
   if (!teamName)             return showModalError('Team name is required');
   if (!leaderName)           return showModalError('Leader name is required');
@@ -278,6 +312,7 @@ async function submitModalForm() {
   const payload = {
     regId, teamName, leaderName, email, phone,
     college, teamSize, year,
+    teammates: teammates.join(' | '),
     events: allEvents.join(', '),
     notes,
     timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
@@ -292,7 +327,7 @@ async function submitModalForm() {
 
   // Send to Google Sheets
   try {
-    if (SHEET_URL && SHEET_URL !== 'YOUR_APPS_SCRIPT_URL_HERE') {
+    if (SHEET_URL && SHEET_URL !== 'https://script.google.com/macros/s/AKfycbzEe9zXKXIu21akU2s44-RgGUKY873kFyXXxO1qwSj2L72ZouYlfnhlr4xNcxAB4mVY/exec') {
       await fetch(SHEET_URL, {
         method: 'POST',
         mode: 'no-cors',
@@ -320,6 +355,11 @@ function resetModalForm() {
   const col = document.getElementById('m-college');
   if (col) col.value = 'INDIAN INSTITUTE OF ENGINEERING SCIENCE AND TECHNOLOGY, SHIBPUR';
   ['m-teamSize','m-year'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
+  // Clear teammate fields
+  const container = document.getElementById('teammateFields');
+  const wrap = document.getElementById('teammateFieldsWrap');
+  if (container) container.style.display = 'none';
+  if (wrap) wrap.innerHTML = '';
   const ph = document.getElementById('m-phone');
   if (ph) ph.classList.remove('error');
   const hint = document.getElementById('m-phoneHint');
@@ -344,8 +384,8 @@ window.getRegistrations = function () {
 window.exportCSV = function () {
   const d = JSON.parse(localStorage.getItem('tfs_registrations') || '[]');
   if (!d.length) { alert('No registrations yet!'); return; }
-  const h = ['Reg ID','Team Name','Leader','Email','Phone','College','Team Size','Year','Events','Notes','Timestamp'];
-  const r = d.map(x => [x.regId,x.teamName,x.leaderName,x.email,x.phone,x.college,x.teamSize,x.year||'',x.events,x.notes,x.timestamp]);
+  const h = ['Reg ID','Team Name','Leader','Email','Phone','College','Team Size','Year','Teammates','Events','Notes','Timestamp'];
+  const r = d.map(x => [x.regId,x.teamName,x.leaderName,x.email,x.phone,x.college,x.teamSize,x.year||'',x.teammates||'',x.events,x.notes,x.timestamp]);
   const csv = [h,...r].map(row => row.map(c => `"${String(c).replace(/"/g,'""')}"`).join(',')).join('\n');
   const a = document.createElement('a');
   a.href = 'data:text/csv;charset=utf-8,\uFEFF' + encodeURIComponent(csv);
