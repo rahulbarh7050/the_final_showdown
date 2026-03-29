@@ -2,7 +2,7 @@
 // ⚙️ GOOGLE SHEETS CONFIG
 // Paste your deployed Apps Script URL below
 // =============================================
-const SHEET_URL = 'AKfycbxJc_ERNNzpPx3LSbDei7eLIBuNO2W4DCtA7W8JdxDgfQFUOlwN3T3xqPZk89-QRfMvSg';
+const SHEET_URL = 'AKfycbxJc_ERNNzpPx3LSbDei7eLIBuNO2W4DCtA7W8JdxDgfQFUOlwN3T3xqPZk89-QRfMvSg/exec';
 
 // =============================================
 // EVENT DATA — Real coordinator names updated
