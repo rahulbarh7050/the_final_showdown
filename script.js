@@ -2,7 +2,7 @@
 // ⚙️ GOOGLE SHEETS CONFIG
 // Paste your deployed Apps Script URL below
 // =============================================
-const SHEET_URL = 'https://script.google.com/macros/s/AKfycbwvM4TbJzWeu8h7aTOn2O4CYiPnZv9SnFiORcYUK-1y3gAZ-EVRX7Pi-80iw7MQMMhjcQ/exec';
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbzCwEjwFVhmDut3EPMavmJRqhVqdU3r98p2mWrZwmhwhTPYW_PTDjgOiQ5kpmiMdfaU4g/exec';
 
 // =============================================
 // EVENT DATA — Real coordinator names updated
@@ -58,7 +58,7 @@ const EVENT_DATA = {
     desc: 'The most ferocious event of the arena. Robo-Rumble is a 3-part combat challenge: (1) Tug of War — two bots pull against each other on a rope, (2) Sub-Event 1, and (3) Sub-Event 2. Your bot must be built to withstand punishment.',
     stats: [{ val: '2–4', key: 'Team Size' }, { val: 'not decided', key: '1st Prize' }, { val: 'Ultrasonic Sensor', key: '2nd Prize' }],
     coordinators: [
-      { name: 'Anamika Roy', contact: '+91 9863812944', img: 'images/anamika.jpg' },
+      { name: 'Anamika Roy', contact: '+91 8147021850', img: 'images/anamika.jpg' },
       { name: 'Rahul Kumar', contact: '+91 7050472750', img: 'images/rahul.jpg' }
     ],
     rulebook: 'rulebooks/roborumble.pdf'
@@ -106,7 +106,7 @@ function closeMobileNav() {
 // COUNTDOWN — pinned to IST (UTC+5:30)
 // =============================================
 function updateCountdown() {
-  const target = new Date('2025-04-11T17:00:00+05:30');
+  const target = new Date('2026-04-11T17:00:00+05:30');
   const diff = target - new Date();
   if (diff <= 0) {
     ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => document.getElementById(id).textContent = '00');
@@ -208,32 +208,6 @@ function hideRegisterPanel(silent) {
 }
 
 // =============================================
-// DYNAMIC TEAMMATE FIELDS
-// =============================================
-function updateTeammateFields(size) {
-  const container = document.getElementById('teammateFields');
-  const wrap = document.getElementById('teammateFieldsWrap');
-  const count = parseInt(size) - 1; // teammates = total - leader
-
-  if (!size || count <= 0) {
-    container.style.display = 'none';
-    wrap.innerHTML = '';
-    return;
-  }
-
-  container.style.display = 'block';
-  wrap.innerHTML = '';
-
-  for (let i = 1; i <= count; i++) {
-    wrap.innerHTML += `
-      <div class="teammate-row">
-        <span class="teammate-num">TEAMMATE ${i}</span>
-        <input type="text" id="m-teammate-${i}" placeholder="Full name of teammate ${i}">
-      </div>`;
-  }
-}
-
-// =============================================
 // PHONE VALIDATION
 // =============================================
 function sanitizeModalPhone(input) {
@@ -283,14 +257,6 @@ async function submitModalForm() {
   const extraEvents = [];
   const allEvents   = [currentEventName];
 
-  // Collect teammate names
-  const size = parseInt(teamSize) || 1;
-  const teammates = [];
-  for (let i = 1; i <= size - 1; i++) {
-    const el = document.getElementById(`m-teammate-${i}`);
-    teammates.push(el ? el.value.trim() : '');
-  }
-
   // Validation
   if (!teamName)             return showModalError('Team name is required');
   if (!leaderName)           return showModalError('Leader name is required');
@@ -312,7 +278,6 @@ async function submitModalForm() {
   const payload = {
     regId, teamName, leaderName, email, phone,
     college, teamSize, year,
-    teammates: teammates.join(' | '),
     events: allEvents.join(', '),
     notes,
     timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
@@ -327,7 +292,7 @@ async function submitModalForm() {
 
   // Send to Google Sheets
   try {
-    if (SHEET_URL && SHEET_URL !== 'https://script.google.com/macros/s/AKfycbwvM4TbJzWeu8h7aTOn2O4CYiPnZv9SnFiORcYUK-1y3gAZ-EVRX7Pi-80iw7MQMMhjcQ/exec') {
+    if (SHEET_URL && SHEET_URL !== 'YOUR_APPS_SCRIPT_URL_HERE') {
       await fetch(SHEET_URL, {
         method: 'POST',
         mode: 'no-cors',
@@ -355,11 +320,6 @@ function resetModalForm() {
   const col = document.getElementById('m-college');
   if (col) col.value = 'INDIAN INSTITUTE OF ENGINEERING SCIENCE AND TECHNOLOGY, SHIBPUR';
   ['m-teamSize','m-year'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
-  // Clear teammate fields
-  const container = document.getElementById('teammateFields');
-  const wrap = document.getElementById('teammateFieldsWrap');
-  if (container) container.style.display = 'none';
-  if (wrap) wrap.innerHTML = '';
   const ph = document.getElementById('m-phone');
   if (ph) ph.classList.remove('error');
   const hint = document.getElementById('m-phoneHint');
@@ -384,8 +344,8 @@ window.getRegistrations = function () {
 window.exportCSV = function () {
   const d = JSON.parse(localStorage.getItem('tfs_registrations') || '[]');
   if (!d.length) { alert('No registrations yet!'); return; }
-  const h = ['Reg ID','Team Name','Leader','Email','Phone','College','Team Size','Year','Teammates','Events','Notes','Timestamp'];
-  const r = d.map(x => [x.regId,x.teamName,x.leaderName,x.email,x.phone,x.college,x.teamSize,x.year||'',x.teammates||'',x.events,x.notes,x.timestamp]);
+  const h = ['Reg ID','Team Name','Leader','Email','Phone','College','Team Size','Year','Events','Notes','Timestamp'];
+  const r = d.map(x => [x.regId,x.teamName,x.leaderName,x.email,x.phone,x.college,x.teamSize,x.year||'',x.events,x.notes,x.timestamp]);
   const csv = [h,...r].map(row => row.map(c => `"${String(c).replace(/"/g,'""')}"`).join(',')).join('\n');
   const a = document.createElement('a');
   a.href = 'data:text/csv;charset=utf-8,\uFEFF' + encodeURIComponent(csv);
