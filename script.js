@@ -58,7 +58,7 @@ const EVENT_DATA = {
     desc: 'The most ferocious event of the arena. Robo-Rumble is a 3-part combat challenge: (1) Tug of War — two bots pull against each other on a rope, (2) Sub-Event 1, and (3) Sub-Event 2. Your bot must be built to withstand punishment.',
     stats: [{ val: '2–4', key: 'Team Size' }, { val: 'not decided', key: '1st Prize' }, { val: 'Ultrasonic Sensor', key: '2nd Prize' }],
     coordinators: [
-      { name: 'Anamika Roy', contact: '+91 8147021850', img: 'images/anamika.jpg' },
+      { name: 'Anamika Roy', contact: '+91 9863812944', img: 'images/anamika.jpg' },
       { name: 'Rahul Kumar', contact: '+91 7050472750', img: 'images/rahul.jpg' }
     ],
     rulebook: 'rulebooks/roborumble.pdf'
