@@ -67,7 +67,7 @@ const EVENT_DATA = {
     num: 'EVENT 06', icon: '🛸', name: 'Hovercraft',
     type: 'manual', typeLabel: 'Manual — RC',
     desc: 'Pilot a custom-built RC hovercraft through a challenging course. Your hovercraft must be self-built within specified dimensions and weight limits. The course includes turns, ramps, and surface changes. Master the unique air-cushion physics — speed and precision wins.',
-    stats: [{ val: '2–4', key: 'Team Size' }, { val: 'Airplane Night light', key: '1st Prize' }, { val:'MQ-135 Air Quality Sensor', key: '2nd Prize' }],
+    stats: [{ val: '2–4', key: 'Team Size' }, { val: 'Airplane Night light', key: '1st Prize' }, { val: 'MQ-135 Air Quality Sensor', key: '2nd Prize' }],
     coordinators: [
       { name: 'Pushpika Patel', contact: '+91 8318575758', img: 'images/pushpika.jpg' },
       { name: 'Anchal Chaudhary', contact: '+91 9336049348', img: 'images/anchal.jpg' }
@@ -78,12 +78,12 @@ const EVENT_DATA = {
 
 // All 6 events for "also joining" checkboxes
 const ALL_EVENTS = [
-  { value: 'Line Follower',  tag: 'AUTONOMOUS' },
-  { value: 'Fire Fighter',   tag: 'AUTONOMOUS' },
-  { value: 'DeathRace',      tag: 'MANUAL' },
-  { value: 'Soccer Bot',     tag: 'MANUAL' },
-  { value: 'Robo-Rumble',    tag: 'MANUAL — COMBAT' },
-  { value: 'Hovercraft',     tag: 'MANUAL — RC' },
+  { value: 'Line Follower', tag: 'AUTONOMOUS' },
+  { value: 'Fire Fighter', tag: 'AUTONOMOUS' },
+  { value: 'DeathRace', tag: 'MANUAL' },
+  { value: 'Soccer Bot', tag: 'MANUAL' },
+  { value: 'Robo-Rumble', tag: 'MANUAL — COMBAT' },
+  { value: 'Hovercraft', tag: 'MANUAL — RC' },
 ];
 
 let currentEventName = '';
@@ -109,13 +109,13 @@ function updateCountdown() {
   const target = new Date('2026-04-11T15:00:00+05:30');
   const diff = target - new Date();
   if (diff <= 0) {
-    ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => document.getElementById(id).textContent = '00');
+    ['cd-days', 'cd-hours', 'cd-mins', 'cd-secs'].forEach(id => document.getElementById(id).textContent = '00');
     return;
   }
-  document.getElementById('cd-days').textContent  = String(Math.floor(diff / 86400000)).padStart(2,'0');
-  document.getElementById('cd-hours').textContent = String(Math.floor((diff % 86400000) / 3600000)).padStart(2,'0');
-  document.getElementById('cd-mins').textContent  = String(Math.floor((diff % 3600000) / 60000)).padStart(2,'0');
-  document.getElementById('cd-secs').textContent  = String(Math.floor((diff % 60000) / 1000)).padStart(2,'0');
+  document.getElementById('cd-days').textContent = String(Math.floor(diff / 86400000)).padStart(2, '0');
+  document.getElementById('cd-hours').textContent = String(Math.floor((diff % 86400000) / 3600000)).padStart(2, '0');
+  document.getElementById('cd-mins').textContent = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
+  document.getElementById('cd-secs').textContent = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
 }
 setInterval(updateCountdown, 1000);
 updateCountdown();
@@ -128,8 +128,8 @@ function openEventModal(eventId) {
   if (!data) return;
   currentEventName = data.name;
 
-  document.getElementById('modalNum').textContent   = data.num;
-  document.getElementById('modalIcon').textContent  = data.icon;
+  document.getElementById('modalNum').textContent = data.num;
+  document.getElementById('modalIcon').textContent = data.icon;
   document.getElementById('modalTitle').textContent = data.name;
 
   const typeEl = document.getElementById('modalType');
@@ -181,8 +181,28 @@ function closeEventModal(e, force) {
 }
 
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeEventModal(null, true);
+  if (e.key === 'Escape') {
+    closeEventModal(null, true);
+    closeHovercraftPlan(null, true);
+  }
 });
+
+// =============================================
+// HOVERCRAFT PLAN MODAL
+// =============================================
+function openHovercraftPlan() {
+  document.getElementById('hovercraftPlanModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeHovercraftPlan(e, force) {
+  const modal = document.getElementById('hovercraftPlanModal');
+  if (force || (e && e.target === modal)) {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+
 
 // =============================================
 // REGISTER PANEL — Slide in from modal
@@ -246,27 +266,27 @@ function clearModalError() {
 async function submitModalForm() {
   clearModalError();
 
-  const teamName   = document.getElementById('m-teamName').value.trim();
+  const teamName = document.getElementById('m-teamName').value.trim();
   const leaderName = document.getElementById('m-leaderName').value.trim();
-  const email      = document.getElementById('m-email').value.trim();
-  const phone      = document.getElementById('m-phone').value.trim();
-  const college    = document.getElementById('m-college').value.trim();
-  const teamSize   = document.getElementById('m-teamSize').value;
-  const year       = document.getElementById('m-year').value;
-  const notes      = document.getElementById('m-notes').value.trim();
+  const email = document.getElementById('m-email').value.trim();
+  const phone = document.getElementById('m-phone').value.trim();
+  const college = document.getElementById('m-college').value.trim();
+  const teamSize = document.getElementById('m-teamSize').value;
+  const year = document.getElementById('m-year').value;
+  const notes = document.getElementById('m-notes').value.trim();
   const extraEvents = [];
-  const allEvents   = [currentEventName];
+  const allEvents = [currentEventName];
 
   // Validation
-  if (!teamName)             return showModalError('Team name is required');
-  if (!leaderName)           return showModalError('Leader name is required');
+  if (!teamName) return showModalError('Team name is required');
+  if (!leaderName) return showModalError('Leader name is required');
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return showModalError('Enter a valid email address');
-  if (!phone)                return showModalError('Phone number is required');
-  if (phone.length !== 10)   return showModalError('Phone must be exactly 10 digits');
-  if (/[^0-9]/.test(phone))  return showModalError('Phone must contain digits only');
-  if (!college)              return showModalError('College / Institution is required');
-  if (!teamSize)             return showModalError('Please select team size');
-  if (!year)                 return showModalError('Please select year of study');
+  if (!phone) return showModalError('Phone number is required');
+  if (phone.length !== 10) return showModalError('Phone must be exactly 10 digits');
+  if (/[^0-9]/.test(phone)) return showModalError('Phone must contain digits only');
+  if (!college) return showModalError('College / Institution is required');
+  if (!teamSize) return showModalError('Please select team size');
+  if (!year) return showModalError('Please select year of study');
 
   // Loading state
   const btn = document.getElementById('m-submitBtn');
@@ -288,7 +308,7 @@ async function submitModalForm() {
     const stored = JSON.parse(localStorage.getItem('tfs_registrations') || '[]');
     stored.push(payload);
     localStorage.setItem('tfs_registrations', JSON.stringify(stored));
-  } catch (_) {}
+  } catch (_) { }
 
   // Send to Google Sheets
   try {
@@ -300,7 +320,7 @@ async function submitModalForm() {
         body: JSON.stringify(payload)
       });
     }
-  } catch (_) {}
+  } catch (_) { }
 
   // Show success
   document.getElementById('modal-form-area').style.display = 'none';
@@ -313,13 +333,13 @@ async function submitModalForm() {
 }
 
 function resetModalForm() {
-  ['m-teamName','m-leaderName','m-email','m-phone','m-notes'].forEach(id => {
+  ['m-teamName', 'm-leaderName', 'm-email', 'm-phone', 'm-notes'].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.value = '';
   });
   const col = document.getElementById('m-college');
   if (col) col.value = 'INDIAN INSTITUTE OF ENGINEERING SCIENCE AND TECHNOLOGY, SHIBPUR';
-  ['m-teamSize','m-year'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
+  ['m-teamSize', 'm-year'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
   const ph = document.getElementById('m-phone');
   if (ph) ph.classList.remove('error');
   const hint = document.getElementById('m-phoneHint');
@@ -344,11 +364,11 @@ window.getRegistrations = function () {
 window.exportCSV = function () {
   const d = JSON.parse(localStorage.getItem('tfs_registrations') || '[]');
   if (!d.length) { alert('No registrations yet!'); return; }
-  const h = ['Reg ID','Team Name','Leader','Email','Phone','College','Team Size','Year','Events','Notes','Timestamp'];
-  const r = d.map(x => [x.regId,x.teamName,x.leaderName,x.email,x.phone,x.college,x.teamSize,x.year||'',x.events,x.notes,x.timestamp]);
-  const csv = [h,...r].map(row => row.map(c => `"${String(c).replace(/"/g,'""')}"`).join(',')).join('\n');
+  const h = ['Reg ID', 'Team Name', 'Leader', 'Email', 'Phone', 'College', 'Team Size', 'Year', 'Events', 'Notes', 'Timestamp'];
+  const r = d.map(x => [x.regId, x.teamName, x.leaderName, x.email, x.phone, x.college, x.teamSize, x.year || '', x.events, x.notes, x.timestamp]);
+  const csv = [h, ...r].map(row => row.map(c => `"${String(c).replace(/"/g, '""')}"`).join(',')).join('\n');
   const a = document.createElement('a');
   a.href = 'data:text/csv;charset=utf-8,\uFEFF' + encodeURIComponent(csv);
-  a.download = 'TFS_Registrations_' + new Date().toISOString().slice(0,10) + '.csv';
+  a.download = 'TFS_Registrations_' + new Date().toISOString().slice(0, 10) + '.csv';
   a.click();
 };

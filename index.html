@@ -5,7 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>THE FINAL SHOWDOWN — RoboDarshan, IIEST Shibpur</title>
-  <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -35,7 +37,8 @@
 
   <!-- INFO BANNER -->
   <div class="info-banner" style="margin-top:60px">
-    🔴 <span class="blink">●</span>&nbsp; Registrations Open — <strong>11 &amp; 12 April 2026</strong> — IIEST Shibpur Campus
+    🔴 <span class="blink">●</span>&nbsp; Registrations Open — <strong>11 &amp; 12 April 2026</strong> — IIEST Shibpur
+    Campus
   </div>
 
   <!-- HERO -->
@@ -59,6 +62,21 @@
     </div>
   </section>
 
+  <!-- HOVERCRAFT PLAN BOX -->
+  <div class="hc-plan-wrap">
+    <div class="hc-plan-box" onclick="openHovercraftPlan()">
+      <div class="hc-plan-glow"></div>
+      <div class="hc-plan-icon">🛸</div>
+      <div class="hc-plan-content">
+        <div class="hc-plan-tag">EVENT 06 — Match Schedule</div>
+        <div class="hc-plan-title">HOVERCRAFT <span>PLAN</span></div>
+        <div class="hc-plan-sub">View match bracket, rules & event details</div>
+      </div>
+      <div class="hc-plan-arrow">→</div>
+      <div class="hc-plan-corner"></div>
+    </div>
+  </div>
+
   <!-- COUNTDOWN -->
   <div class="countdown-section">
     <div class="countdown-wrap">
@@ -70,6 +88,7 @@
   </div>
 
   <div class="divider"></div>
+
 
   <!-- EVENTS -->
   <section class="events-section" id="events">
@@ -88,7 +107,8 @@
           <span class="event-icon">🤖</span>
           <div class="event-name">Line Follower</div>
           <span class="event-type auto">Autonomous</span>
-          <p class="event-desc">Navigate a complex track at maximum speed following only a line. Precision, speed, and smooth curve-handling will separate winners from participants.</p>
+          <p class="event-desc">Navigate a complex track at maximum speed following only a line. Precision, speed, and
+            smooth curve-handling will separate winners from participants.</p>
           <div class="event-click-hint">Click to register →</div>
           <div class="event-corner"></div>
         </div>
@@ -98,7 +118,8 @@
           <span class="event-icon">🔥</span>
           <div class="event-name">Fire Fighter</div>
           <span class="event-type auto">Autonomous</span>
-          <p class="event-desc">Your bot must detect and extinguish a flame inside a maze-like arena — autonomously. No human control, just pure embedded intelligence.</p>
+          <p class="event-desc">Your bot must detect and extinguish a flame inside a maze-like arena — autonomously. No
+            human control, just pure embedded intelligence.</p>
           <div class="event-click-hint">Click to register →</div>
           <div class="event-corner"></div>
         </div>
@@ -113,7 +134,8 @@
           <span class="event-icon">🏎️</span>
           <div class="event-name">DeathRace</div>
           <span class="event-type manual">Manual — Car Race</span>
-          <p class="event-desc">High-speed RC car racing on a rugged track with obstacles. Fastest lap time wins, but survival matters — this isn't just about speed.</p>
+          <p class="event-desc">High-speed RC car racing on a rugged track with obstacles. Fastest lap time wins, but
+            survival matters — this isn't just about speed.</p>
           <div class="event-click-hint">Click to register →</div>
           <div class="event-corner"></div>
         </div>
@@ -123,7 +145,8 @@
           <span class="event-icon">⚽</span>
           <div class="event-name">Robo-Soccer</div>
           <span class="event-type manual">Manual — Soccer</span>
-          <p class="event-desc">Head-to-head robot soccer. Two bots, one ball, one goal. Strategy and control precision will decide who lifts the trophy.</p>
+          <p class="event-desc">Head-to-head robot soccer. Two bots, one ball, one goal. Strategy and control precision
+            will decide who lifts the trophy.</p>
           <div class="event-click-hint">Click to register →</div>
           <div class="event-corner"></div>
         </div>
@@ -133,7 +156,8 @@
           <span class="event-icon">💪</span>
           <div class="event-name">Robo-Rumble</div>
           <span class="event-type manual">Manual — Combat</span>
-          <p class="event-desc">The arena's most brutal event. Tug of War between bots + 2 sub-events packed with metal carnage. Only the strongest machine survives the rumble.</p>
+          <p class="event-desc">The arena's most brutal event. Tug of War between bots + 2 sub-events packed with metal
+            carnage. Only the strongest machine survives the rumble.</p>
           <div class="event-click-hint">Click to register →</div>
           <div class="event-corner"></div>
         </div>
@@ -143,7 +167,8 @@
           <span class="event-icon">🛸</span>
           <div class="event-name">Hovercraft</div>
           <span class="event-type manual">Manual — RC</span>
-          <p class="event-desc">Pilot a custom-built RC-Hovercraft and Win one to one battle, that will test your control and strategy.</p>
+          <p class="event-desc">Pilot a custom-built RC-Hovercraft and Win one to one battle, that will test your
+            control and strategy.</p>
           <div class="event-click-hint">Click to register →</div>
           <div class="event-corner"></div>
         </div>
@@ -263,7 +288,8 @@
         <div class="success-msg" id="modal-successMsg">
           <div class="success-icon">🤖</div>
           <h3>You're In, Warrior!</h3>
-          <p>KEEP THE REG. ID FOR FUTURE REFERENCE.<br>Registration received. Prepare your bots.<br>The arena awaits.</p>
+          <p>KEEP THE REG. ID FOR FUTURE REFERENCE.<br>Registration received. Prepare your bots.<br>The arena awaits.
+          </p>
           <div class="reg-id" id="modal-regIdDisplay"></div>
           <br><br>
           <button class="btn-secondary" onclick="closeEventModal(null,true)">Back to Events</button>
@@ -287,62 +313,98 @@
         <div class="schedule-day-title">📅 Day 1 — April 11</div>
         <div class="schedule-item">
           <div class="sch-time">15:00</div>
-          <div><div class="sch-event">Registration &amp; Opening</div></div>
+          <div>
+            <div class="sch-event">Registration &amp; Opening</div>
+          </div>
         </div>
         <div class="schedule-item">
           <div class="sch-time">15:30</div>
-          <div><div class="sch-event">Robo-Soccer</div><div class="sch-type">Manual Heats</div></div>
+          <div>
+            <div class="sch-event">Robo-Soccer</div>
+            <div class="sch-type">Manual Heats</div>
+          </div>
         </div>
         <div class="schedule-item">
           <div class="sch-time">16:30</div>
-          <div><div class="sch-event">DeathRace</div><div class="sch-type">Manual Heats</div></div>
+          <div>
+            <div class="sch-event">DeathRace</div>
+            <div class="sch-type">Manual Heats</div>
+          </div>
         </div>
         <div class="schedule-item">
           <div class="sch-time">17:30</div>
-          <div><div class="sch-event">Line Follower &amp; Fire Fighter</div><div class="sch-type">Autonomous Heats</div></div>
+          <div>
+            <div class="sch-event">Line Follower &amp; Fire Fighter</div>
+            <div class="sch-type">Autonomous Heats</div>
+          </div>
         </div>
         <div class="schedule-item">
           <div class="sch-time">18:00</div>
-          <div><div class="sch-event">Robo-rumble &amp; Hovercraft</div><div class="sch-type">Manual Heats</div></div>
+          <div>
+            <div class="sch-event">Robo-rumble &amp; Hovercraft</div>
+            <div class="sch-type">Manual Heats</div>
+          </div>
         </div>
         <div class="schedule-item">
           <div class="sch-time">20:00</div>
-          <div><div class="sch-event">Day 1 Wrap-up</div></div>
+          <div>
+            <div class="sch-event">Day 1 Wrap-up</div>
+          </div>
         </div>
       </div>
       <div class="schedule-day">
         <div class="schedule-day-title">📅 Day 2 — April 12</div>
         <div class="schedule-item">
           <div class="sch-time">13:00</div>
-          <div><div class="sch-event">DeathRace Finals</div><div class="sch-type">Grand Finals</div></div>
+          <div>
+            <div class="sch-event">DeathRace Finals</div>
+            <div class="sch-type">Grand Finals</div>
+          </div>
         </div>
         <div class="schedule-item">
           <div class="sch-time">14:00</div>
-          <div><div class="sch-event">Robo-Socccer Finals</div><div class="sch-type">Grand Finals</div></div>
+          <div>
+            <div class="sch-event">Robo-Socccer Finals</div>
+            <div class="sch-type">Grand Finals</div>
+          </div>
         </div>
         <div class="schedule-item">
           <div class="sch-time">15:00</div>
-          <div><div class="sch-event">Line Follower &amp; Fire Fighter Finals</div><div class="sch-type">Grand Finals</div></div>
+          <div>
+            <div class="sch-event">Line Follower &amp; Fire Fighter Finals</div>
+            <div class="sch-type">Grand Finals</div>
+          </div>
         </div>
         <div class="schedule-item">
           <div class="sch-time">15:30</div>
-          <div><div class="sch-event">Robo-Rumble Finals</div><div class="sch-type">Grand Finals</div></div>
+          <div>
+            <div class="sch-event">Robo-Rumble Finals</div>
+            <div class="sch-type">Grand Finals</div>
+          </div>
         </div>
         <div class="schedule-item">
           <div class="sch-time">17:30</div>
-          <div><div class="sch-event">Hovercraft Finals</div><div class="sch-type">Grand Finals</div></div>
+          <div>
+            <div class="sch-event">Hovercraft Finals</div>
+            <div class="sch-type">Grand Finals</div>
+          </div>
         </div>
         <div class="schedule-item">
           <div class="sch-time">18:30</div>
-          <div><div class="sch-event">Prize Distribution</div></div>
+          <div>
+            <div class="sch-event">Prize Distribution</div>
+          </div>
         </div>
         <div class="schedule-item">
           <div class="sch-time">20:00</div>
-          <div><div class="sch-event">Event Wrap-up</div></div>
+          <div>
+            <div class="sch-event">Event Wrap-up</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
 
   <div class="divider"></div>
 
@@ -361,7 +423,8 @@
       <div class="team-row">
         <div class="team-card">
           <div class="team-img-wrap">
-            <img src="images/pratyush.jpg" alt="Pratyush Dhittal" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <img src="images/pratyush.jpg" alt="Pratyush Dhittal"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="team-img-placeholder">🤖</div>
           </div>
           <div class="team-info">
@@ -371,7 +434,8 @@
         </div>
         <div class="team-card">
           <div class="team-img-wrap">
-            <img src="images/shourya.jpg" alt="Shourya Deep Bera" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <img src="images/shourya.jpg" alt="Shourya Deep Bera"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="team-img-placeholder">🤖</div>
           </div>
           <div class="team-info">
@@ -381,7 +445,8 @@
         </div>
         <div class="team-card">
           <div class="team-img-wrap">
-            <img src="images/mandeep.jpg" alt="Mandeep Datta Narwade" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <img src="images/mandeep.jpg" alt="Mandeep Datta Narwade"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="team-img-placeholder">🤖</div>
           </div>
           <div class="team-info">
@@ -391,7 +456,8 @@
         </div>
         <div class="team-card">
           <div class="team-img-wrap">
-            <img src="images/aneesh.jpg" alt="Aneesh Arya" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <img src="images/aneesh.jpg" alt="Aneesh Arya"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="team-img-placeholder">🤖</div>
           </div>
           <div class="team-info">
@@ -406,7 +472,8 @@
       <div class="team-row">
         <div class="team-card coord">
           <div class="team-img-wrap small">
-            <img src="images/vineet.jpg" alt="Vineet Jogi" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <img src="images/vineet.jpg" alt="Vineet Jogi"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="team-img-placeholder">⚙️</div>
           </div>
           <div class="team-info">
@@ -416,7 +483,8 @@
         </div>
         <div class="team-card coord">
           <div class="team-img-wrap small">
-            <img src="images/rahul.jpg" alt="Rahul Kumar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <img src="images/rahul.jpg" alt="Rahul Kumar"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="team-img-placeholder">⚙️</div>
           </div>
           <div class="team-info">
@@ -426,7 +494,8 @@
         </div>
         <div class="team-card coord">
           <div class="team-img-wrap small">
-            <img src="images/shivangi.jpg" alt="Shivangi Jha" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <img src="images/shivangi.jpg" alt="Shivangi Jha"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="team-img-placeholder">⚙️</div>
           </div>
           <div class="team-info">
@@ -436,7 +505,8 @@
         </div>
         <div class="team-card coord">
           <div class="team-img-wrap small">
-            <img src="images/gaurav.jpg" alt="Gaurav Yadav" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <img src="images/gaurav.jpg" alt="Gaurav Yadav"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="team-img-placeholder">⚙️</div>
           </div>
           <div class="team-info">
@@ -446,7 +516,8 @@
         </div>
         <div class="team-card coord">
           <div class="team-img-wrap small">
-            <img src="images/anamika.jpg" alt="Anamika Roy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <img src="images/anamika.jpg" alt="Anamika Roy"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="team-img-placeholder">⚙️</div>
           </div>
           <div class="team-info">
@@ -456,7 +527,8 @@
         </div>
         <div class="team-card coord">
           <div class="team-img-wrap small">
-            <img src="images/pushpika.jpg" alt="Pushpika Patel" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <img src="images/pushpika.jpg" alt="Pushpika Patel"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
             <div class="team-img-placeholder">⚙️</div>
           </div>
           <div class="team-info">
@@ -473,9 +545,229 @@
   <footer>
     <div class="footer-logo">ROBO<span>DARSHAN</span></div>
     <div class="footer-text">The Robotics Society of IIEST Shibpur &nbsp;·&nbsp; THE FINAL SHOWDOWN 2026</div>
-    <div class="footer-text" style="color:var(--accent); font-family:'Orbitron',monospace; font-size:11px; letter-spacing:2px;">11–12 APR 2026</div>
+    <div class="footer-text"
+      style="color:var(--accent); font-family:'Orbitron',monospace; font-size:11px; letter-spacing:2px;">11–12 APR 2026
+    </div>
   </footer>
+
+  <!-- HOVERCRAFT PLAN MODAL -->
+  <div class="modal-overlay" id="hovercraftPlanModal" onclick="closeHovercraftPlan(event)">
+    <div class="modal-box hc-modal-box">
+      <button class="modal-close" onclick="closeHovercraftPlan(null, true)">✕</button>
+
+      <!-- Header -->
+      <div class="modal-header">
+        <span class="modal-icon">🛸</span>
+        <div>
+          <div class="modal-event-num">EVENT 06</div>
+          <h2 class="modal-title">Hovercraft</h2>
+          <span class="modal-type manual">Manual — RC</span>
+        </div>
+      </div>
+
+      <div class="modal-body">
+
+        <!-- About -->
+        <div class="modal-section">
+          <div class="modal-section-label">About the Event</div>
+          <p class="modal-desc">Pilot a custom-built RC hovercraft through a challenging course. Your hovercraft must be
+            self-built within specified dimensions and weight limits. The course includes turns, ramps, and surface
+            changes. Master the unique air-cushion physics — speed and precision wins. One-on-one battles decide who
+            advances.</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="modal-stats">
+          <div class="modal-stat"><span class="modal-stat-val">2–4</span><span class="modal-stat-key">Team Size</span>
+          </div>
+          <div class="modal-stat"><span class="modal-stat-val">✈️ Night Light</span><span class="modal-stat-key">1st
+              Prize</span></div>
+          <div class="modal-stat"><span class="modal-stat-val">MQ-135</span><span class="modal-stat-key">2nd
+              Prize</span></div>
+        </div>
+
+        <!-- Rules -->
+        <div class="modal-section">
+          <div class="modal-section-label">Rules & Regulations</div>
+          <ul class="hc-rules-list">
+            <li>🛸 Hovercraft must be self-built; no commercial hovercrafts allowed.</li>
+            <li>📐 Maximum dimensions: <strong>40cm × 40cm × 30cm</strong> (L × W × H).</li>
+            <li>⚖️ Maximum weight: <strong>4 kg</strong> including battery.</li>
+            <li>🔋 Must run on batteries only — no wired power during competition.</li>
+            <li>🎮 RC controller must operate on standard 2.4 GHz frequency.</li>
+            <li>🏆 Hovercraft should be hover during the whole match, Maneuverability is the main criteria.</li>
+            <li>⚔️ Matches are 1v1; the hovercraft that stays in bounds or scores more points wins.</li>
+            <li>⏱️ Each match slot is <strong>20 minutes</strong> long.</li>
+            <li>⏱️ The matches will be of <strong>2 minutes</strong> for each team.</li>
+            <li>🚫 Intentional interference with opponent's controller is strictly prohibited.</li>
+            <li>📋 Teams must report to the arena at least 5 minutes before their slot.</li>
+            <li>🏆 League format: 5 match slots, top 2 teams advance to grand final.</li>
+            <li>🏆 Judgement criteria: <strong>50% Control, 25% maneuverability, 25% Aggression</strong></li>
+            <li>🏆 <strong>Judges desicion will be Final.</strong></li>
+          </ul>
+        </div>
+
+        <!-- Rulebook -->
+        <div class="modal-section" style="margin-bottom:0">
+          <div class="modal-section-label">📄 Rulebook</div>
+          <a href="rulebooks/hovercraft.pdf" target="_blank" class="btn-rulebook"
+            style="margin-bottom:24px; display:inline-block;">📄 View Full Rulebook</a>
+        </div>
+
+        <!-- Match Schedule -->
+        <div class="modal-section">
+          <div class="modal-section-label">Match Schedule — League Slots</div>
+          <div class="hc-schedule-table-wrap">
+            <table class="hc-schedule-table">
+              <thead>
+                <tr>
+                  <th>Slot</th>
+                  <th>Time</th>
+                  <th>Match 1</th>
+                  <th>Match 2</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="slot-num">Slot 1</td>
+                  <td class="slot-time">6:00 PM – 6:20 PM</td>
+                  <td>
+                    <div class="hc-match">
+                      <span class="hc-team decepticons">Decepticons</span>
+                      <span class="vs">vs</span>
+                      <span class="hc-team alabama">Alabama-nigga</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="hc-match">
+                      <span class="hc-team autobots">Autobots</span>
+                      <span class="vs">vs</span>
+                      <span class="hc-team hairfall">Hairfall</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="slot-num">Slot 2</td>
+                  <td class="slot-time">6:20 PM – 6:40 PM</td>
+                  <td>
+                    <div class="hc-match">
+                      <span class="hc-team autobots">Autobots</span>
+                      <span class="vs">vs</span>
+                      <span class="hc-team irobox">I-Robox</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="hc-match">
+                      <span class="hc-team hairfall">Hairfall</span>
+                      <span class="vs">vs</span>
+                      <span class="hc-team alabama">Alabama-nigga</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="slot-num">Slot 3</td>
+                  <td class="slot-time">6:40 PM – 7:00 PM</td>
+                  <td>
+                    <div class="hc-match">
+                      <span class="hc-team hairfall">Hairfall</span>
+                      <span class="vs">vs</span>
+                      <span class="hc-team decepticons">Decepticons</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="hc-match">
+                      <span class="hc-team alabama">Alabama-nigga</span>
+                      <span class="vs">vs</span>
+                      <span class="hc-team irobox">I-Robox</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="slot-num">Slot 4</td>
+                  <td class="slot-time">7:00 PM – 7:20 PM</td>
+                  <td>
+                    <div class="hc-match">
+                      <span class="hc-team alabama">Alabama-nigga</span>
+                      <span class="vs">vs</span>
+                      <span class="hc-team autobots">Autobots</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="hc-match">
+                      <span class="hc-team irobox">I-Robox</span>
+                      <span class="vs">vs</span>
+                      <span class="hc-team decepticons">Decepticons</span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="slot-num">Slot 5</td>
+                  <td class="slot-time">7:20 PM – 7:40 PM</td>
+                  <td>
+                    <div class="hc-match">
+                      <span class="hc-team irobox">I-Robox</span>
+                      <span class="vs">vs</span>
+                      <span class="hc-team hairfall">Hairfall</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="hc-match">
+                      <span class="hc-team decepticons">Decepticons</span>
+                      <span class="vs">vs</span>
+                      <span class="hc-team autobots">Autobots</span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Team Legend -->
+          <div class="hc-team-legend">
+            <div class="hc-legend-title">Teams</div>
+            <div class="hc-legend-grid">
+              <span class="hc-team decepticons">Decepticons</span>
+              <span class="hc-team autobots">Autobots</span>
+              <span class="hc-team hairfall">Hairfall</span>
+              <span class="hc-team alabama">Alabama-nigga</span>
+              <span class="hc-team irobox">I-Robox</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coordinators -->
+        <div class="modal-section">
+          <div class="modal-section-label">Event Coordinators</div>
+          <div class="modal-coordinators">
+            <div class="coordinator-card">
+              <div class="coord-avatar"><img src="images/pushpika.jpg" alt="Pushpika Patel"
+                  onerror="this.style.display='none'"></div>
+              <div>
+                <div class="coord-name">Pushpika Patel</div>
+                <div class="coord-contact">+91 8318575758</div>
+              </div>
+            </div>
+            <div class="coordinator-card">
+              <div class="coord-avatar"><img src="images/anchal.jpg" alt="Anchal Chaudhary"
+                  onerror="this.style.display='none'"></div>
+              <div>
+                <div class="coord-name">Anchal Chaudhary</div>
+                <div class="coord-contact">+91 9336049348</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button class="btn-primary" onclick="openEventModal('hovercraft'); closeHovercraftPlan(null,true);">⚡&nbsp;
+            Register for Hovercraft</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
+
 </html>
